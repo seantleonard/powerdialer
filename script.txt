@@ -1,0 +1,250 @@
+tell application "Telephone"
+	quit
+end tell
+
+tell application "Telephone" to activate
+
+
+tell application "System Events"
+	set frontmost of process "Telephone" to true
+	tell process "Telephone"
+		
+		--Set Status to Available--
+		tell window 1
+			tell tool bar 1
+				tell group 1
+					tell menu button 1
+						click
+						keystroke "a"
+						keystroke return
+					end tell
+				end tell
+			end tell
+		end tell
+		
+		--Dial Line one--
+		tell (1st window whose value of attribute "AXMain" is true)
+			set mainWindow to value of attribute "AXTitle"
+		end tell
+		delay 1
+		
+		tell window mainWindow
+			tell text field 1
+				set value of attribute "AXValue" to ""
+				set value of attribute "AXValue" to "180052010671"
+				keystroke return
+				delay 1
+				--keystroke "." using command down
+				
+			end tell
+			
+		end tell
+		set lineOne to value of static text 3 of window 1
+		delay 0.2
+		
+		
+		--Dial Line two --
+		click menu item mainWindow of menu 1 of menu bar item "Window" of menu bar 1
+		tell window mainWindow
+			tell text field 1
+				set value of attribute "AXValue" to ""
+				set value of attribute "AXValue" to "180052010672"
+				keystroke return
+				delay 1
+				--keystroke "." using command down
+			end tell
+		end tell
+		set lineTwo to value of static text 3 of window 1
+		delay 0.2
+		
+		--Dial Line 3--
+		click menu item mainWindow of menu 1 of menu bar item "Window" of menu bar 1
+		tell window mainWindow
+			tell text field 1
+				set value of attribute "AXValue" to ""
+				set value of attribute "AXValue" to "180052010673"
+				keystroke return
+				delay 1
+				--keystroke "." using command down
+			end tell
+		end tell
+		set lineThree to value of static text 3 of window 1
+		delay 0.2
+		
+		
+		--Dial Line 4--
+		click menu item mainWindow of menu 1 of menu bar item "Window" of menu bar 1
+		tell window mainWindow
+			tell text field 1
+				set value of attribute "AXValue" to ""
+				set value of attribute "AXValue" to "180052010674"
+				keystroke return
+				delay 1
+				--keystroke "." using command down
+			end tell
+		end tell
+		set lineFour to value of static text 3 of window 1
+		delay 0.2
+		
+		--Dial Line 5--
+		click menu item mainWindow of menu 1 of menu bar item "Window" of menu bar 1
+		tell window mainWindow
+			tell text field 1
+				set value of attribute "AXValue" to ""
+				set value of attribute "AXValue" to "180052010675"
+				keystroke return
+				delay 1
+				--keystroke "." using command down
+			end tell
+		end tell
+		set lineFive to value of static text 3 of window 1
+		delay 0.2
+		
+		--Dial Line 6--
+		click menu item mainWindow of menu 1 of menu bar item "Window" of menu bar 1
+		tell window mainWindow
+			tell text field 1
+				set value of attribute "AXValue" to ""
+				set value of attribute "AXValue" to "180052010676"
+				keystroke return
+				delay 1
+				--keystroke "." using command down
+			end tell
+		end tell
+		set lineSix to value of static text 3 of window 1
+		delay 0.2
+		
+		--Dial Line 7--
+		click menu item mainWindow of menu 1 of menu bar item "Window" of menu bar 1
+		tell window mainWindow
+			tell text field 1
+				set value of attribute "AXValue" to ""
+				set value of attribute "AXValue" to "180052010677"
+				keystroke return
+				delay 1
+				--keystroke "." using command down
+			end tell
+		end tell
+		set lineSeven to value of static text 3 of window 1
+		delay 0.2
+		
+		--Dial Line 8--
+		click menu item mainWindow of menu 1 of menu bar item "Window" of menu bar 1
+		tell window mainWindow
+			tell text field 1
+				set value of attribute "AXValue" to ""
+				set value of attribute "AXValue" to "180052010678"
+				keystroke return
+				delay 1
+				--keystroke "." using command down
+			end tell
+		end tell
+		set lineEight to value of static text 3 of window 1
+		
+		--Let the redialing begin!!!!
+		repeat 25 times
+			click menu item lineOne of menu 1 of menu bar item "Window" of menu bar 1
+			tell window lineOne
+				if value of static text 1 is equal to "busy" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				else if value of static text 1 is equal to "Call Ended" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				end if
+			end tell
+			
+			delay 0.4
+			
+			click menu item lineTwo of menu 1 of menu bar item "Window" of menu bar 1
+			tell window lineTwo
+				if value of static text 1 is equal to "busy" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				else if value of static text 1 is equal to "Call Ended" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				end if
+			end tell
+			
+			delay 0.4
+			
+			click menu item lineThree of menu 1 of menu bar item "Window" of menu bar 1
+			tell window lineThree
+				if value of static text 1 is equal to "busy" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				else if value of static text 1 is equal to "Call Ended" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				end if
+			end tell
+			
+			delay 0.4
+			
+			click menu item lineFour of menu 1 of menu bar item "Window" of menu bar 1
+			tell window lineFour
+				if value of static text 1 is equal to "busy" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				else if value of static text 1 is equal to "Call Ended" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				end if
+			end tell
+			
+			delay 0.4
+			
+			click menu item lineFive of menu 1 of menu bar item "Window" of menu bar 1
+			tell window lineFive
+				if value of static text 1 is equal to "busy" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				else if value of static text 1 is equal to "Call Ended" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				end if
+			end tell
+			
+			delay 0.4
+			
+			click menu item lineSix of menu 1 of menu bar item "Window" of menu bar 1
+			tell window lineSix
+				if value of static text 1 is equal to "busy" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				else if value of static text 1 is equal to "Call Ended" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				end if
+			end tell
+			
+			delay 0.4
+			
+			click menu item lineSeven of menu 1 of menu bar item "Window" of menu bar 1
+			tell window lineSeven
+				if value of static text 1 is equal to "busy" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				else if value of static text 1 is equal to "Call Ended" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				end if
+			end tell
+			
+			delay 0.4
+			
+			click menu item lineEight of menu 1 of menu bar item "Window" of menu bar 1
+			tell window lineEight
+				if value of static text 1 is equal to "busy" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				else if value of static text 1 is equal to "Call Ended" then
+					keystroke "r" using command down
+					keystroke "`" using command down
+				end if
+			end tell
+			
+		end repeat
+	end tell
+end tell
